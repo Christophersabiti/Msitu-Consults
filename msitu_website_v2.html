@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSITU Consults Limited — Environmental & Social Consultancy Uganda</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --plum:#7b2d6e;--plum-dark:#4f1c47;--plum-light:#c47db8;--plum-bg:#f9f0f7;
+  --green:#5a9e2f;--green-dark:#3d6e20;--green-light:#8ac95a;--green-bg:#f3f9ed;
+  --white:#ffffff;--cream:#faf8f5;--text:#1a1a1a;--muted:#6b6b6b;--border:#e8e0e6;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3.5rem;background:rgba(75,28,71,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-mark{width:42px;height:42px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.nav-logo-mark svg{width:26px;height:26px}
+.nav-brand-text .name{font-family:'Lora',serif;font-size:1.25rem;color:#fff}
+.nav-brand-text .tagline{font-size:0.65rem;color:var(--plum-light);letter-spacing:0.14em;text-transform:uppercase;margin-top:1px}
+.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:0.88rem;transition:color 0.2s}
+.nav-links a:hover{color:#8ac95a}
+.nav-cta{background:var(--green);color:#fff;padding:0.55rem 1.5rem;border-radius:50px;font-size:0.86rem;font-weight:500;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--green-dark)}
+
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:7rem 3.5rem 4rem;background:#2d0e28}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 85% 40%,rgba(90,158,47,0.18) 0%,transparent 65%),linear-gradient(135deg,#3d1038 0%,#4f1c47 50%,#2d1030 100%)}
+.hero-content{position:relative;z-index:2;max-width:660px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(90,158,47,0.18);border:1px solid rgba(90,158,47,0.35);color:#a3d46f;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.4rem 1.1rem;border-radius:50px;margin-bottom:1.8rem}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#a3d46f;display:inline-block}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2.6rem,4.8vw,3.9rem);color:#fff;line-height:1.14;margin-bottom:1.4rem}
+.hero h1 em{color:#8ac95a;font-style:italic}
+.hero p{color:rgba(255,255,255,0.7);font-size:1.05rem;line-height:1.78;max-width:560px;margin-bottom:0.8rem;font-weight:300}
+.hero-sub{font-size:0.83rem;color:rgba(255,255,255,0.5);margin-bottom:2.2rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+.hero-sub span::before{content:'✓ ';color:#8ac95a}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-green{background:var(--green);color:#fff;padding:0.85rem 2rem;border-radius:50px;font-weight:500;font-size:0.95rem;text-decoration:none;transition:background 0.2s,transform 0.2s}
+.btn-green:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.28);color:#fff;padding:0.85rem 2rem;border-radius:50px;font-size:0.95rem;text-decoration:none;transition:border-color 0.2s}
+.btn-ghost:hover{border-color:#8ac95a}
+.hero-stats{display:flex;gap:3rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap}
+.hero-stat .n{font-family:'Lora',serif;font-size:2rem;color:#fff;display:block}
+.hero-stat .l{font-size:0.77rem;color:rgba(255,255,255,0.48);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;display:block}
+
+.cert-bar{background:var(--white);padding:1.4rem 3.5rem;display:flex;align-items:center;justify-content:center;gap:3rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.cert-item{display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--muted)}
+.cert-icon{width:28px;height:28px;border-radius:6px;background:var(--green-bg);display:flex;align-items:center;justify-content:center}
+.cert-icon svg{width:16px;height:16px}
+
+section{padding:5.5rem 3.5rem}
+.sec-label{font-size:0.73rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--plum);font-weight:500;margin-bottom:0.7rem;display:flex;align-items:center;gap:8px}
+.sec-label::before{content:'';display:block;width:22px;height:2px;background:var(--plum);border-radius:2px}
+.sec-title{font-family:'Lora',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);color:var(--plum-dark);line-height:1.22;margin-bottom:1rem}
+.sec-desc{color:var(--muted);font-size:0.98rem;line-height:1.78;max-width:560px;font-weight:300}
+
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
+.about-card{background:var(--plum-dark);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden}
+.about-card-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 80% 20%,rgba(90,158,47,0.2) 0%,transparent 60%)}
+.about-card-content{position:relative;z-index:1}
+.about-card-content p{color:rgba(255,255,255,0.82);font-size:0.95rem;line-height:1.78;font-weight:300}
+.about-card-content p+p{margin-top:1rem}
+.about-badges{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.badge{padding:0.4rem 0.9rem;border-radius:50px;font-size:0.78rem;font-weight:500}
+.badge-green{background:rgba(90,158,47,0.2);color:#a3d46f;border:1px solid rgba(90,158,47,0.3)}
+.badge-plum{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15)}
+.about-floats{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.about-float{display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:12px;padding:1rem 1.2rem;border:1px solid var(--border)}
+.float-icon{width:36px;height:36px;border-radius:8px;background:var(--plum-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.float-icon svg{width:18px;height:18px}
+.about-float h4{font-size:0.88rem;font-weight:500;color:var(--plum-dark);margin-bottom:2px}
+.about-float p{font-size:0.82rem;color:var(--muted);line-height:1.55;font-weight:300}
+
+#services{background:var(--cream)}
+.services-wrap{max-width:1200px;margin:0 auto}
+.services-header{margin-bottom:3rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
+.svc-card{background:var(--white);border-radius:16px;padding:1.8rem;border:1px solid var(--border);transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(75,28,71,0.1);border-color:var(--plum-light)}
+.svc-icon{width:50px;height:50px;border-radius:12px;background:var(--plum-bg);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.svc-icon svg{width:24px;height:24px}
+.svc-card h3{font-size:1rem;font-weight:600;color:var(--plum-dark);margin-bottom:0.5rem}
+.svc-card p{font-size:0.86rem;color:var(--muted);line-height:1.68;font-weight:300}
+.svc-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem}
+.svc-tag{font-size:0.72rem;background:var(--green-bg);color:var(--green-dark);padding:0.25rem 0.7rem;border-radius:50px;font-weight:500}
+.svc-cta{display:inline-flex;align-items:center;gap:5px;color:var(--plum);font-size:0.82rem;font-weight:500;margin-top:1.1rem;text-decoration:none;transition:gap 0.2s}
+.svc-cta:hover{gap:9px}
+
+.sectors-section{background:var(--plum-dark);padding:5rem 3.5rem}
+.sectors-inner{max-width:1200px;margin:0 auto}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.8rem}
+.sector-card{background:rgba(255,255,255,0.07);border-radius:14px;padding:1.4rem 1.6rem;border:1px solid rgba(255,255,255,0.1)}
+.sector-card h4{font-size:0.95rem;font-weight:500;color:#8ac95a;margin-bottom:0.6rem}
+.sector-card ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.sector-card ul li{font-size:0.82rem;color:rgba(255,255,255,0.6);padding-left:14px;position:relative;line-height:1.5;font-weight:300}
+.sector-card ul li::before{content:'›';position:absolute;left:0;color:#8ac95a}
+
+#projects{background:var(--white)}
+.projects-wrap{max-width:1200px;margin:0 auto}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.8rem}
+.proj-card{background:var(--cream);border-radius:14px;padding:1.6rem;border:1px solid var(--border);display:flex;gap:1rem}
+.proj-num{font-family:'Lora',serif;font-size:1.8rem;color:var(--border);font-weight:600;line-height:1;flex-shrink:0;min-width:40px}
+.proj-card h4{font-size:0.92rem;font-weight:500;color:var(--plum-dark);margin-bottom:4px;line-height:1.4}
+.proj-card p{font-size:0.82rem;color:var(--muted);line-height:1.55;font-weight:300}
+.proj-badge{display:inline-block;font-size:0.7rem;background:var(--green-bg);color:var(--green-dark);padding:2px 8px;border-radius:50px;font-weight:500;margin-top:6px}
+
+.clients-strip{background:var(--cream);padding:3.5rem;border-top:1px solid var(--border)}
+.clients-inner{max-width:1200px;margin:0 auto}
+.clients-label{text-align:center;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:1.8rem}
+.clients-list{display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:center}
+.client-pill{background:var(--white);border:1px solid var(--border);border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;color:var(--muted)}
+
+.why-section{background:var(--plum-bg);padding:5.5rem 3.5rem}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.why-points{display:flex;flex-direction:column;gap:1.3rem;margin-top:2rem}
+.why-point{display:flex;gap:1rem}
+.why-dot{width:32px;height:32px;border-radius:8px;background:var(--plum);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-dot svg{width:16px;height:16px}
+.why-point h4{font-size:0.93rem;font-weight:500;color:var(--plum-dark);margin-bottom:3px}
+.why-point p{font-size:0.85rem;color:var(--muted);line-height:1.62;font-weight:300}
+.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.wstat{background:var(--white);border-radius:14px;padding:1.6rem;border:1px solid var(--border);text-align:center}
+.wstat .n{font-family:'Lora',serif;font-size:2.2rem;color:var(--plum-dark);display:block}
+.wstat .l{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;display:block}
+
+#contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;max-width:1200px;margin:0 auto;align-items:start}
+.contact-details{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.cdet{display:flex;gap:12px}
+.cdet-icon{width:40px;height:40px;border-radius:10px;background:var(--plum-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cdet-icon svg{width:18px;height:18px}
+.cdet h5{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:2px}
+.cdet p{font-size:0.92rem;color:var(--text)}
+.contact-form{background:var(--cream);border-radius:20px;padding:2.4rem}
+.form-title{font-family:'Lora',serif;font-size:1.2rem;color:var(--plum-dark);margin-bottom:1.6rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:1rem}
+.fg label{font-size:0.8rem;color:var(--muted);font-weight:500}
+.fg input,.fg select,.fg textarea{padding:0.72rem 1rem;border-radius:10px;border:1.5px solid var(--border);font-family:'Outfit',sans-serif;font-size:0.9rem;color:var(--text);background:var(--white);outline:none;transition:border-color 0.2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--plum)}
+.fg textarea{resize:vertical;min-height:110px}
+.form-btn{width:100%;background:var(--plum-dark);color:#fff;border:none;padding:0.9rem;border-radius:50px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;transition:background 0.2s}
+.form-btn:hover{background:var(--plum)}
+
+footer{background:#2d0e28;color:rgba(255,255,255,0.5);padding:3rem 3.5rem 2rem}
+.footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand .name{font-family:'Lora',serif;font-size:1.1rem;color:#fff;margin-bottom:4px}
+.footer-brand .desc{font-size:0.83rem;color:rgba(255,255,255,0.45);line-height:1.65;font-weight:300;margin-top:0.6rem}
+.footer-col h5{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.6);margin-bottom:0.9rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.footer-col ul a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.83rem;transition:color 0.2s}
+.footer-col ul a:hover{color:#8ac95a}
+.footer-bottom{max-width:1200px;margin:1.5rem auto 0;font-size:0.8rem}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp 0.65s ease both}
+.hero-content>*:nth-child(1){animation-delay:0.1s}.hero-content>*:nth-child(2){animation-delay:0.22s}
+.hero-content>*:nth-child(3){animation-delay:0.32s}.hero-content>*:nth-child(4){animation-delay:0.42s}
+.hero-content>*:nth-child(5){animation-delay:0.52s}.hero-content>*:nth-child(6){animation-delay:0.62s}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  section,.sectors-section,.why-section{padding:4rem 1.5rem}
+  .hero{padding:6.5rem 1.5rem 3.5rem}
+  .about-grid,.why-inner,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .sectors-grid{grid-template-columns:1fr 1fr}.projects-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}.hero-stats{gap:2rem}
+  .footer-top{grid-template-columns:1fr;gap:2rem}.cert-bar{padding:1.2rem 1.5rem;gap:1.5rem}
+  .clients-strip{padding:2.5rem 1.5rem}
+}
+@media(max-width:580px){.sectors-grid,.why-stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#home">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 26 26" fill="none"><path d="M13 2C10 5.5 7 8 7 12c0 3.31 2.69 6 6 6s6-2.69 6-6c0-4-3-6-6-10z" fill="#fff"/><path d="M13 18v6M11 22h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="nav-brand-text">
+      <div class="name">MSITU Consults</div>
+      <div class="tagline">Environmental Consultancy · Uganda</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero" style="padding:7rem 3.5rem 4rem">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span> NEMA Certified · Est. 2011 · Kampala, Uganda</div>
+    <h1>Uganda's Leading <em>Environmental &<br>Social</em> Consultancy</h1>
+    <p>MSITU Consults Limited delivers expert environmental and social management services — from impact assessments and resettlement planning to occupational health, waste management, and road safety consultancy.</p>
+    <div class="hero-sub">
+      <span>NEMA Registered & Certified</span>
+      <span>PPDA Registered</span>
+      <span>URA Tax Compliant</span>
+      <span>40+ Expert Associates</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-green">Request a Consultation →</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="n">10+</span><span class="l">Years Experience</span></div>
+      <div class="hero-stat"><span class="n">40+</span><span class="l">Expert Associates</span></div>
+      <div class="hero-stat"><span class="n">15+</span><span class="l">Projects Completed</span></div>
+      <div class="hero-stat"><span class="n">6+</span><span class="l">Service Disciplines</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERT BAR -->
+<div class="cert-bar">
+  <div class="cert-item"><div class="cert-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#3d6e20" stroke-width="1.5"/></svg></div>NEMA Certified Firm</div>
+  <div class="cert-item"><div class="cert-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#3d6e20" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#3d6e20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>PPDA Registered</div>
+  <div class="cert-item"><div class="cert-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#3d6e20" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#3d6e20" stroke-width="1.5" stroke-linecap="round"/></svg></div>ISO 14001 Expertise</div>
+  <div class="cert-item"><div class="cert-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#3d6e20" stroke-width="1.5" stroke-linecap="round"/></svg></div>Multidisciplinary Team</div>
+  <div class="cert-item"><div class="cert-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M21 10H3M21 6H3M21 14H3M21 18H3" stroke="#3d6e20" stroke-width="1.5" stroke-linecap="round"/></svg></div>World Bank / IFC Standards</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <div class="about-card">
+        <div class="about-card-bg"></div>
+        <div class="about-card-content">
+          <div style="font-size:0.73rem;text-transform:uppercase;letter-spacing:0.15em;color:#c47db8;font-weight:500;margin-bottom:0.7rem">Who We Are</div>
+          <h2 style="font-family:'Lora',serif;font-size:1.6rem;color:#fff;margin-bottom:1rem;line-height:1.3">Uganda's trusted partner in environmental management</h2>
+          <p>MSITU Consults Limited is a leading local provider of Environmental and Social Management consultancy, established in 2011 and headquartered at Kyambogo Banda, Kampala. We are NEMA-certified, URA tax compliant, and registered with PPDA.</p>
+          <p>Our activities are managed by highly qualified environmentalists, physical planners, sociologists, civil engineers, surveyors, property valuers, public health experts, archaeologists and economists, with access to over 40 external associate consultants.</p>
+          <div class="about-badges">
+            <span class="badge badge-green">Founded 2011</span>
+            <span class="badge badge-green">NEMA Certified</span>
+            <span class="badge badge-plum">PPDA Registered</span>
+            <span class="badge badge-plum">ISO 14001</span>
+            <span class="badge badge-plum">World Bank ESS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-label">Our Approach</div>
+      <h2 class="sec-title">Credible results. Affordable services. Local expertise.</h2>
+      <p class="sec-desc">We operate locally and regionally, partnering with leading global environmental firms and multilateral development agencies. Our mission: to be Uganda's leading provider of sustainable development services while maintaining uncompromising principles.</p>
+      <div class="about-floats">
+        <div class="about-float">
+          <div class="float-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#7b2d6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Technical excellence</h4><p>We apply the highest standards of integrity across all environmental and natural resource management services, staying current with global advancements in the field.</p></div>
+        </div>
+        <div class="about-float">
+          <div class="float-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#7b2d6e" stroke-width="1.5"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20" stroke="#7b2d6e" stroke-width="1.5"/></svg></div>
+          <div><h4>International standards</h4><p>We work to World Bank ESS Standards, IFC Performance Standards, and Equator Principles — the right partner for internationally financed projects.</p></div>
+        </div>
+        <div class="about-float">
+          <div class="float-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#7b2d6e" stroke-width="1.5"/></svg></div>
+          <div><h4>Robust quality assurance</h4><p>MSITU has implemented a rigorous QAQC system for every project, ensuring credible, timely results delivered on time and within budget.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-wrap">
+    <div class="services-header">
+      <div class="sec-label">What We Do</div>
+      <h2 class="sec-title">Comprehensive environmental & social consultancy</h2>
+      <p class="sec-desc">End-to-end environmental management — from scoping and impact assessment through to implementation, monitoring and capacity building.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#7b2d6e" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#7b2d6e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Environmental & Social Impact Assessment</h3>
+        <p>Full ESIA and EIA studies to national law, World Bank ESS, IFC Standards and Equator Principles. Includes Inception Report, Scoping Report, and full Environmental Social Impact Statement (ESIS).</p>
+        <div class="svc-tags"><span class="svc-tag">ESIA</span><span class="svc-tag">EIA</span><span class="svc-tag">ESIS</span><span class="svc-tag">Scoping</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#7b2d6e" stroke-width="1.5" stroke-linejoin="round"/><polyline points="9,22 9,12 15,12 15,22" stroke="#7b2d6e" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3>Resettlement Action Planning (RAP)</h3>
+        <p>Full RAP studies and implementation — stakeholder engagement, socio-economic surveys, compensation frameworks, asset registration, valuation reports, and livelihood restoration to IFC/World Bank ESS 5 standards.</p>
+        <div class="svc-tags"><span class="svc-tag">RAP</span><span class="svc-tag">Compensation</span><span class="svc-tag">Livelihood Restoration</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#7b2d6e" stroke-width="1.5"/></svg></div>
+        <h3>Occupational Health & Safety</h3>
+        <p>Construction site safety consulting, fire watch and prevention services, OHS audits, HAZOP, quantitative risk analysis (QRA), disaster management planning, and HSE training per the OHS Act 2006.</p>
+        <div class="svc-tags"><span class="svc-tag">OHS Audit</span><span class="svc-tag">HAZOP</span><span class="svc-tag">Fire Safety</span><span class="svc-tag">QRA</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M1 6l10.5 6L22 6M1 6v12l10.5 6L22 18V6" stroke="#7b2d6e" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3>Waste Management</h3>
+        <p>Strategic solid and hazardous waste consultancy — disposal planning, recovery and recycling, landfill design and closure, environmental risk assessment, and waste management training programmes.</p>
+        <div class="svc-tags"><span class="svc-tag">Solid Waste</span><span class="svc-tag">Hazardous Waste</span><span class="svc-tag">Landfill</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="#7b2d6e" stroke-width="1.5"/><path d="M21 21l-4.35-4.35" stroke="#7b2d6e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Environmental Audit & Monitoring</h3>
+        <p>Environmental and social audits identifying compliance and management gaps, with practical corrective actions and hands-on staff capacity building. ISO 14001 implementation support included.</p>
+        <div class="svc-tags"><span class="svc-tag">Environmental Audit</span><span class="svc-tag">ISO 14001</span><span class="svc-tag">Monitoring</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="#7b2d6e" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="#7b2d6e" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="#7b2d6e" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="#7b2d6e" stroke-width="1.5"/></svg></div>
+        <h3>GIS & Geo-information Analysis</h3>
+        <p>GIS mapping, remote sensing, land use surveys, strip maps, traffic and transportation studies, and spatial valuation mapping in compliance with legal and project requirements.</p>
+        <div class="svc-tags"><span class="svc-tag">GIS</span><span class="svc-tag">Remote Sensing</span><span class="svc-tag">Land Use</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8z" stroke="#7b2d6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Socioeconomics & Social Research</h3>
+        <p>Social impact assessments, gender studies, socio-economic surveys, census of affected persons, community mobilisation, and strategic planning support for government departments.</p>
+        <div class="svc-tags"><span class="svc-tag">SIA</span><span class="svc-tag">Gender Studies</span><span class="svc-tag">Community Mobilisation</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="#7b2d6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Road Safety Consultancy</h3>
+        <p>Road safety assessments, mobility studies, traffic and transportation impact studies, and comprehensive road safety management services for infrastructure development projects.</p>
+        <div class="svc-tags"><span class="svc-tag">Road Safety</span><span class="svc-tag">Traffic Studies</span><span class="svc-tag">Mobility</span></div>
+        <a href="#contact" class="svc-cta">Enquire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<div id="sectors" class="sectors-section">
+  <div class="sectors-inner">
+    <div style="font-size:0.73rem;text-transform:uppercase;letter-spacing:0.15em;color:#c47db8;font-weight:500;margin-bottom:0.7rem;display:flex;align-items:center;gap:8px"><span style="display:block;width:22px;height:2px;background:#c47db8;border-radius:2px"></span>Industry Sectors</div>
+    <h2 style="font-family:'Lora',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);color:#fff;line-height:1.22;margin-bottom:1rem">Extensive cross-sector experience</h2>
+    <p style="color:rgba(255,255,255,0.6);font-size:0.98rem;line-height:1.78;max-width:560px;font-weight:300">We have managed large and small scale environmental assignments across the following industries throughout Uganda.</p>
+    <div class="sectors-grid">
+      <div class="sector-card"><h4>Oil, Gas & Energy</h4><ul><li>Fuel depots & retail outlets</li><li>Oil waste treatment plants</li><li>Electric substation & transmission</li><li>Bio-oil / fuel processing plants</li><li>Commercial oil waste facilities</li></ul></div>
+      <div class="sector-card"><h4>Infrastructure & Built Environment</h4><ul><li>Road infrastructure upgrade works</li><li>Apartments, offices & shopping malls</li><li>Medical & school infrastructure</li><li>Quarry sites & warehouses</li><li>Telecom masts & BTS stations</li><li>Solid waste disposal sites</li></ul></div>
+      <div class="sector-card"><h4>Agri-business & Manufacturing</h4><ul><li>Coffee & grain processing plants</li><li>Fruit processing & packaging</li><li>Tea estates & fish ponds</li><li>Dairy plants & breweries</li><li>Chemical & polymer processing</li><li>Pharmaceuticals & textiles</li></ul></div>
+      <div class="sector-card"><h4>Water & Sanitation</h4><ul><li>Water supply & sanitation systems</li><li>Water resource assessments</li><li>Fecal sludge treatment plants</li><li>Gravity flow schemes</li><li>Water quality monitoring</li></ul></div>
+      <div class="sector-card"><h4>Urban & Land Development</h4><ul><li>Urban and regional planning</li><li>Land use surveys & analyses</li><li>Urban poverty assessments</li><li>Housing studies & analysis</li><li>Physical planning</li></ul></div>
+      <div class="sector-card"><h4>Climate & Natural Resources</h4><ul><li>Climate change impact analysis</li><li>Biodiversity surveys & analysis</li><li>Natural resource management</li><li>Carbon analysis</li><li>Strategic environmental assessments</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-wrap">
+    <div class="sec-label">Selected Projects</div>
+    <h2 class="sec-title">A proven track record across Uganda</h2>
+    <p class="sec-desc">Selected completed assignments demonstrating our capabilities in environmental and social project management over more than a decade.</p>
+    <div class="projects-grid">
+      <div class="proj-card"><div class="proj-num">01</div><div><h4>Greater Kampala BRT System — ESIA & RAP</h4><p>ESIA and RAP for proposed 25km Bus Rapid Transit corridor across Wakiso and KCCA. Client: Ministry of Works & Transport. In association with ARUP Pty Ltd & ROM Transportation.</p><span class="proj-badge">Completed</span></div></div>
+      <div class="proj-card"><div class="proj-num">02</div><div><h4>Mukono-Kalagi-Kayunga-Njeru Road Rehabilitation — ESIA & RAP</h4><p>ESIA, valuation reports and full RAP implementation for 95km road corridor rehabilitation in Central Uganda.</p><span class="proj-badge">Completed</span></div></div>
+      <div class="proj-card"><div class="proj-num">03</div><div><h4>Gulu-Atiak Road Upgrade (74km) — Environmental Audit</h4><p>Environmental audit of 74km road upgrade from gravel to bitumen standard across Gulu and Amuru Districts, Northern Uganda.</p><span class="proj-badge">Completed</span></div></div>
+      <div class="proj-card"><div class="proj-num">04</div><div><h4>Water Supply & Sanitation — Multiple Districts</h4><p>ESIAs for proposed water supply and sanitation systems in Amuru, Zombo and Nebbi Districts, and Wanseko/Ngwedo Rural Growth Centres.</p><span class="proj-badge">Completed</span></div></div>
+      <div class="proj-card"><div class="proj-num">05</div><div><h4>National High Altitude Training Centre — ESIA, Kapchorwa</h4><p>ESIA for development of the NHATC Water Gravity Flow Scheme at Teryet, Kapchorwa District, Eastern Uganda.</p><span class="proj-badge">Completed</span></div></div>
+      <div class="proj-card"><div class="proj-num">06</div><div><h4>Commercial Oil Waste Disposal Facility — ESIA, Hoima</h4><p>ESIA for proposed commercial oil waste disposal facility in Bugambe, Hoima District, Western Uganda (oil-producing region).</p><span class="proj-badge">Completed</span></div></div>
+      <div class="proj-card"><div class="proj-num">07</div><div><h4>Masaka Municipal Solid Waste Disposal Site (20ha) — ESIA</h4><p>ESIA for proposed 20-hectare municipal solid waste disposal site at Kaija-Bulando Village, Buwunga Sub County, Masaka District.</p><span class="proj-badge">Completed</span></div></div>
+      <div class="proj-card"><div class="proj-num">08</div><div><h4>Kitgum Municipality Fecal Sludge Treatment Plant — ESIA</h4><p>ESIA for proposed fecal sludge treatment plant and sludge drying bed in Pager Division, Kitgum Municipality, Northern Uganda.</p><span class="proj-badge">Completed</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<div class="clients-strip">
+  <div class="clients-inner">
+    <div class="clients-label">We have served bilateral & multilateral agencies, government bodies, private sector companies and NGOs</div>
+    <div class="clients-list">
+      <span class="client-pill">Ministry of Works & Transport</span>
+      <span class="client-pill">ARUP Pty Ltd</span>
+      <span class="client-pill">World Bank</span>
+      <span class="client-pill">IFC</span>
+      <span class="client-pill">ROM Transportation</span>
+      <span class="client-pill">SBI International Holdings AG</span>
+      <span class="client-pill">Kikagati Power Company</span>
+      <span class="client-pill">Excel Construction</span>
+      <span class="client-pill">KCCA</span>
+      <span class="client-pill">Local Government Authorities</span>
+      <span class="client-pill">Property Developers</span>
+      <span class="client-pill">NGOs & Non-profits</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="why-section">
+  <div class="why-inner">
+    <div>
+      <div class="sec-label">Why MSITU</div>
+      <h2 class="sec-title">What sets us apart</h2>
+      <p class="sec-desc">We combine deep local knowledge with international standards to deliver credible, timely and affordable consultancy across Uganda and the region.</p>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-dot"><svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#fff"/></svg></div>
+          <div><h4>NEMA certified & fully compliant</h4><p>Certified by Uganda's National Environment Management Authority, tax compliant with URA, and registered with PPDA — all assignments fully meet national legal requirements.</p></div>
+        </div>
+        <div class="why-point">
+          <div class="why-dot"><svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="1.5"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20" stroke="#fff" stroke-width="1.5"/></svg></div>
+          <div><h4>World Bank & IFC aligned</h4><p>We apply World Bank ESS, IFC Performance Standards, and Equator Principles — making us the ideal partner for internationally financed development projects.</p></div>
+        </div>
+        <div class="why-point">
+          <div class="why-dot"><svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div><h4>40+ multidisciplinary associates</h4><p>Environmentalists, sociologists, engineers, planners, GIS specialists, public health experts, archaeologists and economists — comprehensive expertise under one roof.</p></div>
+        </div>
+        <div class="why-point">
+          <div class="why-dot"><svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#fff"/></svg></div>
+          <div><h4>Affordable, competitive pricing</h4><p>We maintain highly competitive pricing through local resource use, electronic delivery, and an extensive in-house data bank — making quality consultancy accessible to more clients.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="wstat"><span class="n">2011</span><span class="l">Year established</span></div>
+      <div class="wstat"><span class="n">40+</span><span class="l">Expert associates</span></div>
+      <div class="wstat"><span class="n">15+</span><span class="l">Completed projects</span></div>
+      <div class="wstat"><span class="n">8+</span><span class="l">Service disciplines</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="sec-label">Contact Us</div>
+      <h2 class="sec-title">Let's discuss your project</h2>
+      <p class="sec-desc">Whether you need an ESIA, a RAP, an OHS audit, a waste management plan, or any other environmental service, we'd be glad to hear from you. In certain circumstances we can also assist in soliciting external project funding.</p>
+      <div class="contact-details">
+        <div class="cdet">
+          <div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="#7b2d6e" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#7b2d6e" stroke-width="1.5"/></svg></div>
+          <div><h5>Address</h5><p>Plots 596 & 597, Kyambogo Banda Circular Road<br>P.O. Box 29871, Kampala, Uganda</p></div>
+        </div>
+        <div class="cdet">
+          <div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" stroke="#7b2d6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h5>Phone</h5><p>Office: +256 772 854103<br>Mobile: +256 700 854100 · +256 751 858544</p></div>
+        </div>
+        <div class="cdet">
+          <div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#7b2d6e" stroke-width="1.5" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="#7b2d6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h5>Email</h5><p>info@msitu.co.ug · business@msitu.co.ug</p></div>
+        </div>
+        <div class="cdet">
+          <div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#7b2d6e" stroke-width="1.5"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20" stroke="#7b2d6e" stroke-width="1.5"/></svg></div>
+          <div><h5>Website</h5><p>www.msitu.co.ug</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <p class="form-title">Send us a message</p>
+      <div class="form-row">
+        <div class="fg"><label>First name</label><input type="text" placeholder="John"></div>
+        <div class="fg"><label>Last name</label><input type="text" placeholder="Doe"></div>
+      </div>
+      <div class="fg"><label>Email address</label><input type="email" placeholder="you@example.com"></div>
+      <div class="fg"><label>Organisation</label><input type="text" placeholder="Company, government body or NGO"></div>
+      <div class="fg">
+        <label>Service required</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Environmental & Social Impact Assessment (ESIA)</option>
+          <option>Resettlement Action Plan (RAP)</option>
+          <option>Environmental Audit & Monitoring</option>
+          <option>Occupational Health & Safety</option>
+          <option>Waste Management Consultancy</option>
+          <option>Road Safety Consultancy</option>
+          <option>GIS & Geo-information Analysis</option>
+          <option>Socioeconomics & Social Research</option>
+          <option>Strategic Environmental Assessment</option>
+          <option>Feasibility Study / Risk Assessment</option>
+          <option>Other / General Enquiry</option>
+        </select>
+      </div>
+      <div class="fg"><label>Tell us about your project</label><textarea placeholder="Briefly describe your project, location, timeline and any specific requirements..."></textarea></div>
+      <button class="form-btn" onclick="this.textContent='Message sent — we\'ll be in touch!';this.style.background='#3d6e20';setTimeout(()=>{this.textContent='Send Message';this.style.background=''},3500)">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="name">MSITU Consults Limited</div>
+      <div class="desc">A leading Ugandan environmental and social management consultancy, established in 2011. NEMA certified, PPDA registered, and committed to the highest standards of environmental integrity across Uganda and the region.</div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">ESIA & EIA</a></li>
+        <li><a href="#services">Resettlement & RAP</a></li>
+        <li><a href="#services">OHS Consulting</a></li>
+        <li><a href="#services">Waste Management</a></li>
+        <li><a href="#services">Environmental Audits</a></li>
+        <li><a href="#services">Road Safety</a></li>
+        <li><a href="#services">GIS & Remote Sensing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#sectors">Sectors</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <h5 style="margin-top:1.2rem">Get in Touch</h5>
+      <ul>
+        <li><a href="tel:+256772854103">+256 772 854103</a></li>
+        <li><a href="tel:+256700854100">+256 700 854100</a></li>
+        <li><a href="mailto:info@msitu.co.ug">info@msitu.co.ug</a></li>
+        <li><a href="mailto:business@msitu.co.ug">business@msitu.co.ug</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 MSITU Consults Limited. All rights reserved. · Plots 596 & 597 Kyambogo Banda Circular Road, P.O. Box 29871, Kampala, Uganda · msitu.co.ug</p>
+  </div>
+</footer>
+
+</body>
+</html>
